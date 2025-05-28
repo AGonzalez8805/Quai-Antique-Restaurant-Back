@@ -5,7 +5,7 @@ services:
     build:
       context: .
     ports:
-      - "8081:80"
+      - "8001:80"
     restart: unless-stopped
     environment:
       - DATABASE_URL=mysql://Amelie:Ag1805Sz0602@@db:3307/restaurantQuaiAntique

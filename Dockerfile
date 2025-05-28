@@ -20,11 +20,12 @@ WORKDIR /var/www
 
 RUN rm composer.lock
 RUN composer install --optimize-autoloader --no-scripts
+RUN composer require symfony/runtime --no-scripts
 
+RUN composer dump-autoload
 RUN mkdir -p var/cache/prod \
     && mkdir -p var/log
 RUN chmod 777 ./var/cache/prod
 RUN chmod 777 ./var/log
 
 EXPOSE 80
-
